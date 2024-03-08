@@ -13,18 +13,20 @@ Automated script for Front-end applicants' test process.
 - Calendly
   - Applicant availability scheduling
   - Test doc sending automation
+- ClickUp
+  - Track test review status
 
 ## Environment Variables
 
-| Key                      | Value (Example)                      | Description                                      |
-| ------------------------ | ------------------------------------ | ------------------------------------------------ |
-| CALENDLY_TOKEN           | eyJr...                              | Calendly Personal Access Token                   |
-| CLICKUP_GH_PR_FIELD_ID   | 747f0c73-6d7b-4cc9-b508-cac4f24a21bb | ClickUp GitHub Pull Request Custom Field Id      |
-| CLICKUP_GH_REPO_FIELD_ID | 21d8a9f2-2a0a-4d44-ab60-ad37df1e490e | ClickUp GitHub Repository Custom Field Id        |
-| CLICKUP_LIST_ID          | 9000001234                           | The list id of ClickUp                           |
-| CLICKUP_TOKEN            | pk_00000000_0000000000...            | ClickUp API Token                                |
-| GITHUB_ORG               | your-github-organization             | GitHub Organization Name                         |
-| GITHUB_REVIEWER_ID       | heptacode                            | GitHub Account Id of the reviewer                |
-| GITHUB_TEMPLATE_REPO     | heptacode-repo                       | GitHub Template Repository Name to be cloned     |
-| GITHUB_TOKEN             | ghp_abcdefg...                       | GitHub Personal Access Token                     |
-| GITHUB_USER_AGENT        | frontend-recruit-helper              | User Agent that will be used for GitHub REST API |
+| Key                      | Description                                      | Value (Example)                      |
+| ------------------------ | ------------------------------------------------ | ------------------------------------ |
+| CALENDLY_TOKEN           | Calendly Personal Access Token                   | eyJr...                              |
+| CLICKUP_GH_PR_FIELD_ID   | ClickUp GitHub Pull Request Custom Field Id      | 747f0c73-6d7b-4cc9-b508-cac4f24a21bb |
+| CLICKUP_GH_REPO_FIELD_ID | ClickUp GitHub Repository Custom Field Id        | 21d8a9f2-2a0a-4d44-ab60-ad37df1e490e |
+| CLICKUP_LIST_ID          | The list id of ClickUp                           | 9000001234                           |
+| CLICKUP_TOKEN            | ClickUp API Token                                | pk_00000000_0000000000...            |
+| GITHUB_ORG               | GitHub Organization Name                         | your-github-organization             |
+| GITHUB_REVIEWER_ID       | GitHub Account Id of the reviewer                | heptacode                            |
+| GITHUB_TEMPLATE_REPO     | GitHub Template Repository Name to be cloned     | heptacode-repo                       |
+| GITHUB_TOKEN             | GitHub Personal Access Token                     | ghp_abcdefg...                       |
+| GITHUB_USER_AGENT        | User Agent that will be used for GitHub REST API | frontend-recruit-helper              |
