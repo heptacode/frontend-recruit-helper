@@ -138,10 +138,28 @@ export async function archiveGitHubRepo(fullOrgRepoName) {
  * Get Calendly event
  * https://developer.calendly.com/api-docs/e2f95ebd44914-get-event
  */
-export async function getCalendlyEvent(calendlyEventID) {
-  const CALENDLY_TOKEN = process.env.CALENDLY_TOKEN;
+// export async function getCalendlyEvent(calendlyEventID){
+//     const CALENDLY_TOKEN = process.env.CALENDLY_TOKEN;
 
-  const endpoint = `/scheduled_events/${calendlyEventID}`;
+//     const endpoint = `/scheduled_events/${calendlyEventID}`
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Authorization': `Bearer ${CALENDLY_TOKEN}`,
+//         }
+//     };
+//     return await makeAPIRequest('calendly', endpoint, options);
+// }
+
+/**
+ * Get Calendly event by Applicant Email
+ */
+export async function getCalendlyEventByEmail(applicantEmail) {
+  const CALENDLY_TOKEN = process.env.CALENDLY_TOKEN;
+  const CALENDLY_USER_URI = process.env.CALENDLY_USER_URI;
+
+  const endpoint = `/scheduled_events?invitee_email=${applicantEmail}&status=active&sort=start_time:desc&user=${CALENDLY_USER_URI}`;
   const options = {
     method: 'GET',
     headers: {

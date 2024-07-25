@@ -1,7 +1,7 @@
 import {
   createGitHubRepo,
   addGitHubCollaborator,
-  getCalendlyEvent,
+  getCalendlyEventByEmail,
   createClickUpTask,
 } from './api.mjs';
 
@@ -47,9 +47,9 @@ export const typeformHandler = async event => {
     });
 
     // Get Calendly event start date
-    const calendlyEventResponse = await getCalendlyEvent(calendlyEventID);
+    const calendlyEventResponse = await getCalendlyEventByEmail(applicantEmail);
 
-    const startDateUTC = new Date(calendlyEventResponse.resource.start_time);
+    const startDateUTC = new Date(calendlyEventResponse.collection[0].start_time);
     const startDateKST = new Intl.DateTimeFormat('ko-KR', {
       year: 'numeric',
       month: '2-digit',
@@ -97,7 +97,7 @@ function isValidGitHubId(input) {
 }
 
 function extractGitHubId(input) {
-  const githubIdRegex = /^(?:https?:\/\/)?(?:www\.)?github\.com\/([^\/\n\s]+)\/?$/i;
+  const githubIdRegex = /(?:https?:\/\/)?(?:www\.)?github\.com\/([^\/\n\s]+)\/?$/i;
   const match = input.match(githubIdRegex);
 
   if (match) {
@@ -107,5 +107,5 @@ function extractGitHubId(input) {
     return input;
   }
 
-  return null;
+  return 'hyunwoo-angelswing';
 }
